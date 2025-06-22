@@ -1,0 +1,43 @@
+PHPMailer adalah library untuk mengirim email dari PHP. Anda bisa install dengan Composer:
+
+1. Buka terminal di folder project Anda.
+2. Jalankan perintah:
+   composer require phpmailer/phpmailer
+
+Jika tidak ada Composer, Anda bisa download PHPMailer di https://github.com/PHPMailer/PHPMailer dan ekstrak ke folder misal: `includes/PHPMailer/`.
+
+Setelah itu, file register.php akan dimodifikasi untuk:
+- Generate token verifikasi
+- Simpan user dengan is_verified=0
+- Kirim email verifikasi
+
+Berikut contoh kode pengiriman email (nanti akan saya integrasikan ke register.php):
+
+require 'includes/PHPMailer/PHPMailer.php';
+require 'includes/PHPMailer/SMTP.php';
+require 'includes/PHPMailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'EMAIL_ANDA@gmail.com';
+    $mail->Password = 'PASSWORD_APLIKASI_GMAIL';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    $mail->setFrom('EMAIL_ANDA@gmail.com', 'Nama Toko Obat');
+    $mail->addAddress($email, $nama);
+    $mail->isHTML(true);
+    $mail->Subject = 'Verifikasi Email Akun';
+    $mail->Body    = 'Klik link berikut untuk verifikasi: <a href="http://localhost/toko-obat-online/verify.php?token=' . $token . '">Verifikasi Akun</a>';
+    $mail->send();
+} catch (Exception $e) {
+    // Handle error
+}
+
+Ganti EMAIL_ANDA dan PASSWORD_APLIKASI_GMAIL sesuai akun Gmail Anda dan aktifkan 2FA serta buat App Password di Google.

@@ -8,44 +8,6 @@ if (!$koneksi) {
 
 // Perintah SQL: ALTER & CONSTRAINTS
 $sql = "
--- PRIMARY & INDEX
-ALTER TABLE keranjang
-  ADD PRIMARY KEY (id),
-  ADD KEY user_id (user_id),
-  ADD KEY obat_id (obat_id);
-
-ALTER TABLE obat
-  ADD PRIMARY KEY (id);
-
-ALTER TABLE transaksi
-  ADD PRIMARY KEY (id),
-  ADD KEY user_id (user_id);
-
-ALTER TABLE transaksi_detail
-  ADD PRIMARY KEY (id),
-  ADD KEY transaksi_id (transaksi_id),
-  ADD KEY obat_id (obat_id);
-
-ALTER TABLE users
-  ADD PRIMARY KEY (id),
-  ADD UNIQUE KEY email (email);
-
--- AUTO_INCREMENT
-ALTER TABLE keranjang
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE obat
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE transaksi
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE transaksi_detail
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE users
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT;
-
 -- FOREIGN KEY CONSTRAINTS
 ALTER TABLE keranjang
   ADD CONSTRAINT keranjang_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (id),

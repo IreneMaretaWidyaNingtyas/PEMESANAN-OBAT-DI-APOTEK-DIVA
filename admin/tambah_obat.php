@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle gambar
     $gambar = $_FILES['gambar']['name'];
     $tmp = $_FILES['gambar']['tmp_name'];
-    $folder = "../uploads/" . $gambar;
+    $folder = __DIR__ . "../uploads/" . $gambar;
 
     if (move_uploaded_file($tmp, $folder)) {
+        $conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
         // Insert data ke database termasuk gambar dan type
         mysqli_query($conn, "INSERT INTO obat (nama, kegunaan, harga, stok, gambar, type) 
             VALUES ('$nama','$kegunaan', '$harga', '$stok', '$gambar', '$type')");

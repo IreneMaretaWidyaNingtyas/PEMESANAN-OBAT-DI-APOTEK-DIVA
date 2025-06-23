@@ -5,10 +5,11 @@ require_once 'includes/db.php';
 $pesan = isset($_GET['pesan']) && $_GET['pesan'] == 'berhasil-daftar' ? "Pendaftaran berhasil, silakan login." : "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
     $email    = $_POST['email'];
     $password = $_POST['password'];
 
-    $conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
     $query = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
     $user  = mysqli_fetch_assoc($query);
 

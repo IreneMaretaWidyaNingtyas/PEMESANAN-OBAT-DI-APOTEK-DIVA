@@ -1,7 +1,11 @@
 <?php
 $koneksi = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 
-$sql = "ALTER TABLE users MODIFY COLUMN email VARCHAR(100)";
+$sql = "
+ALTER TABLE users
+  CHANGE COLUMN nama VARCHAR(100),
+  MODIFY COLUMN password VACRCHAR(100),
+";
 if (mysqli_query($koneksi, $sql)) {
     echo "Kolom berhasil diubah.";
 } else {

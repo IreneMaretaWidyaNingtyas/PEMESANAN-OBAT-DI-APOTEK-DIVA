@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle gambar
     $gambar = $_FILES['gambar']['name'];
     $tmp = $_FILES['gambar']['tmp_name'];
-    $folder = __DIR__ . "../uploads/" . $gambar;
+    $folder = dirname(__DIR__) . "/uploads/" . $gambar;
 
     if (move_uploaded_file($tmp, $folder)) {
         $conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);

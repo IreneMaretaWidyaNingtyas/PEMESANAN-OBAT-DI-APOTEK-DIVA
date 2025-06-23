@@ -10,6 +10,5 @@ $conn = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
->>>>>>> eb17f924baed30d9abfd4082946e1acf6279a5a3
 }
 ?>

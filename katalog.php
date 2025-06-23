@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'includes/db.php';
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $obat = mysqli_query($conn, "SELECT * FROM obat");
 ?>
 <!DOCTYPE html>

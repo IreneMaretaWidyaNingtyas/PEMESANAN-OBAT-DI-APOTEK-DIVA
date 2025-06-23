@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     die("<p class='text-red-500'>Silakan login terlebih dahulu.</p>");
 }
 
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $user_id = $_SESSION['user_id'];
 
 $riwayat = mysqli_query($conn, "

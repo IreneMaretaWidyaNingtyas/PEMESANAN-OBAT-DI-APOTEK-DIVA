@@ -5,7 +5,7 @@ require_once 'includes/db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_obat = (int) $_POST['id_obat'];
     $action = $_POST['action'];
-
+    $conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
     // ini codingan untuk Cek apakah ada di session keranjang
     if (isset($_SESSION['keranjang'][$id_obat])) {
 

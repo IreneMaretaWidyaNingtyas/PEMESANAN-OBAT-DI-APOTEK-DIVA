@@ -2,7 +2,7 @@
 session_start();
 require_once 'includes/db.php';
 $id = $_GET['id'];
-
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $trans = mysqli_fetch_assoc(mysqli_query($conn, "
     SELECT t.*, u.nama AS nama_user, u.email 
     FROM transaksi t 

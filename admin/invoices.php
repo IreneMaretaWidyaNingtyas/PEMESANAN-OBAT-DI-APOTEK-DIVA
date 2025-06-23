@@ -7,6 +7,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 // Ambil semua transaksi terbaru
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $transaksi = mysqli_query($conn, "SELECT t.*, u.nama AS nama_user, u.email FROM transaksi t JOIN users u ON t.user_id = u.id ORDER BY t.tanggal DESC");
 // Update status jika ada request dari form
 if (isset($_POST['update_status']) && isset($_POST['id']) && isset($_POST['status'])) {

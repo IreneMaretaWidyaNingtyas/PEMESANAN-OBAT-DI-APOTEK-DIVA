@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 
 $currentPage = basename($_SERVER['PHP_SELF']);
 // Ambil semua user, baik user maupun admin
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $users = mysqli_query($conn, "SELECT * FROM users");
 
 // ini codingan untuk menambah User

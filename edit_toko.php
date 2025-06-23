@@ -3,7 +3,7 @@ $koneksi = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFU
 
 $sql = "
 ALTER TABLE users
-  MODIFY COLUMN username VARCHAR(100),
+  MODIFY COLUMN nama VARCHAR(100),
   MODIFY COLUMN password VARCHAR(100),
   MODIFY COLUMN email VARCHAR(100)
 ";

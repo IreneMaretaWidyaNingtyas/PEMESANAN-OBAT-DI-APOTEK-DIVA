@@ -3,7 +3,7 @@ $koneksi = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFU
 
 $sql = "
 ALTER TABLE users
-  MODIFY COLUMN id INT AUTO_INCREMENT PRIMARY KEY
+  MODIFY COLUMN id INT AUTO_INCREMENT
 ";
 if (mysqli_query($koneksi, $sql)) {
     echo "Kolom berhasil diubah.";

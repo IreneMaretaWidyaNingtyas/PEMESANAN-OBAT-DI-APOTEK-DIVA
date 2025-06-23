@@ -3,9 +3,9 @@ $koneksi = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFU
 
 $sql = "
 ALTER TABLE users
-  MODIFY COLUMN nama VARCHAR(100),
-  MODIFY COLUMN password VARCHAR(100),
-  MODIFY COLUMN email VARCHAR(100)
+  MODIFY COLUMN role VARCHAR(100),
+  MODIFY COLUMN verify_token VARCHAR(100),
+  MODIFY COLUMN reset_token VARCHAR(100)
 ";
 if (mysqli_query($koneksi, $sql)) {
     echo "Kolom berhasil diubah.";

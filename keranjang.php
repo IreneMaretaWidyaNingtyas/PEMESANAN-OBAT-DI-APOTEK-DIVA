@@ -97,8 +97,11 @@ if (isset($_SESSION['keranjang'])) {
     <label class="font-semibold">Metode Pembayaran:</label>
     <select name="metode_pembayaran" class="w-full border rounded p-2">
       <option value="CASH">CASH</option>
+<<<<<<< HEAD
       <option disabled="true" value="VA">Virtual Account (Maintenance)</option>
       <option disabled="true" value="QRIS">QRIS (Maintenance)</option>
+=======
+>>>>>>> eb17f924baed30d9abfd4082946e1acf6279a5a3
     </select>
   </div>
   <div>

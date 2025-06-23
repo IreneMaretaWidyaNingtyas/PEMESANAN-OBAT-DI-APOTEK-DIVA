@@ -1,15 +1,5 @@
 <?php
-<<<<<<< HEAD
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "toko_obat";
 
-$conn = mysqli_connect($host, $user, $pass, $db);
-
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-=======
 $host = getenv("DB_HOST");
 $user = getenv("DB_USER");
 $pass = getenv("DB_PASS");

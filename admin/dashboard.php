@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     header("Location: ../login.php");
     exit;
 }
-
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
 $currentPage = basename($_SERVER['PHP_SELF']);
 $total_obat = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM obat"));
 $total_user = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM users WHERE role = 'user'"));

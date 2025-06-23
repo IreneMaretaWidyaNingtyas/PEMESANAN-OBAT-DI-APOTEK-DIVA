@@ -3,7 +3,7 @@ require_once '../includes/db.php';
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
-
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
     $result = mysqli_query($conn, "SELECT * FROM obat WHERE id = $id");
 
     if ($row = mysqli_fetch_assoc($result)) {

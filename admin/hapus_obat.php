@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
-
+$conn = mysqli_connect('hopper.proxy.rlwy.net', 'root', 'kgrVBYlHaoXAsSUmoXFUpLGpRvlHfkyK', 'railway', 11750);
     // ini query untuk hapus data dari database
     $query = mysqli_query($conn, "DELETE FROM obat WHERE id = $id");
 
